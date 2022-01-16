@@ -1,6 +1,7 @@
 package pageFactory;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
+import org.junit.AfterClass;
 import org.junit.Assert;
 import org.junit.BeforeClass;
 import org.junit.Test;
@@ -19,12 +20,19 @@ public class PageFactoryTest {
     @Test
     public void sendMessage(){
         SupportClassesPage page=new SupportClassesPage(driver);
+        page.singleResendButton.click();
+        Assert.assertEquals("Received message: selected 1",page.message.getText());
     }
 
     @Test
     public void sendMessageWithWaitInPageObject(){
         SupportClassesPage page=new SupportClassesPage(driver);
         page.singleResendButton.click();
-        Assert.assertEquals("Received message: seleceted 1", page.waitForMessage());
+        Assert.assertEquals("Received message: selected 1", page.waitForMessage());
+    }
+
+    @AfterClass
+    public static void closeDriver(){
+        driver.quit();
     }
 }
