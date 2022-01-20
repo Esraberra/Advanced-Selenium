@@ -8,7 +8,7 @@ import org.junit.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-public class PageFactoryTest {
+public class PageFactoryTest  {
     static WebDriver driver;
     @BeforeClass
     public static void createDriver(){
@@ -33,6 +33,8 @@ public class PageFactoryTest {
 
     @AfterClass
     public static void closeDriver(){
+
+
         driver.quit();
     }
 }

@@ -9,7 +9,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.util.regex.Pattern;
 
-public class SupportClassTestPage {
+public class SupportClassTestPage  {
     private final WebDriverWait wait;
     private final WebDriver driver;
 By selectMenuLocator= By.id("select-menu");
